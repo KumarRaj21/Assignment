@@ -50,9 +50,9 @@ const Hero = (props) => {
       <div className="social-fix">
         <div className="social-links" >
           {
-            props.data.socialData.map((element, index) => (
-              <a href={element.link} key={index} target="_blank" rel="noopener noreferrer">
-                <Icon icon={`fa6-brands:${element.icon}`} />
+            props.userdata.social_handles.map((element, index) => (
+              <a href={element.url} key={index} target="_blank" rel="noopener noreferrer">
+                <img src={element.image.url} alt='' />
               </a>
             ))
           }
