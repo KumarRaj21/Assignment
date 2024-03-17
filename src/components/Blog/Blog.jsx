@@ -18,11 +18,10 @@ const Blog = (props) => {
     setModal(false);
   }
   if (!props.userdata) {
-    return <p>Loading...</p>; // Or any other loading indicator
+    return <p></p>; // Or any other loading indicator
   }
 
-  return (
-    <section id='blog'>
+  return (props.userdata)?(  <section id='blog'>
       <div className="section blog-section bg-dark">
         <div className="container">
           <SectionHeading title="My Skills" subTitle="" />
@@ -52,8 +51,7 @@ const Blog = (props) => {
         </div>
       </div>
       {modal === true ? <Modal img={tempData[1]} title={tempData[2]} date={tempData[3]} paraList={tempData[4]} modalClose={modalClose} /> : ""}
-    </section>
-  )
+    </section>):"";
 }
 
 Blog.propTypes = {

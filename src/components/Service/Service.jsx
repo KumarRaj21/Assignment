@@ -3,10 +3,9 @@ import SectionHeading from '../SectionHeading/SectionHeading';
 
 const Service = (props) => {
   if (!props.userdata) {
-    return <p>Loading...</p>; // Or any other loading indicator
+    return <p></p>; // Or any other loading indicator
   }
-  return (
-    <section id="services" className="section services-section bg-dark">
+  return (props.userdata)?(<section id="services" className="section services-section bg-dark">
       <div className="container">
         <SectionHeading title="My Specialties" subTitle="My Service" />
         <div className="accordion accordion-flush" id="accordion_services">
@@ -29,7 +28,7 @@ const Service = (props) => {
                   aria-controls={`${element.triger}`}
                 >
                   <span className="services-title">{element.name}</span>
-                  <span className="services-small-desc">{element.desc}</span>
+                  <span className="services-small-desc">{element.desc}<br/>Charge: {element.charge}</span>
                   <span className="accordion-icon" />
                 </button>
               </div>
@@ -62,8 +61,7 @@ const Service = (props) => {
           ))}
         </div>
       </div>
-    </section>
-  );
+    </section>):"";
 };
 
 Service.propTypes = {

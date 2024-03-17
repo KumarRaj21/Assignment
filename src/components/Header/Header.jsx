@@ -30,10 +30,9 @@ const Header = ({ data }) => {
     fetchheaddata();
   }, []);
   if (!userheaddata) {
-    return <p>Loading...</p>; // Or any other loading indicator
+    return <p></p>; // Or any other loading indicator
   }
-  return (
-    <header>
+  return (userheaddata)?( <header>
       {/* Mob header */}
       <div className="mob-header" onClick={handleMobileToggle}>
         <div className="mob-h-left">
@@ -147,8 +146,7 @@ const Header = ({ data }) => {
         </ul>
       </div>
       {/* End Header Top */}
-    </header>
-  );
+    </header>):"";
 };
 
 Header.propTypes = {

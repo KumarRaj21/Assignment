@@ -8,10 +8,9 @@ const About = (props) => {
   // const { ImgLink, name, designation, resumeCv } = aboutLeft;
   const { aboutText, contactInfo, archivement, note } = aboutRight;
   if (!props.userdata) {
-    return <p>Loading...</p>; // Or any other loading indicator
+    return <p></p>; // Or any other loading indicator
   }
-  return (
-    <section id="about" className="section about-section">
+  return (props.userdata) ? (<section id="about" className="section about-section">
       <div className="container">
         <SectionHeading title="WELCOME TO..." subTitle="Nice to meet you!" />
         <div
@@ -109,8 +108,7 @@ const About = (props) => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>):"";
 };
 
 About.propTypes = {

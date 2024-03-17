@@ -1,6 +1,11 @@
 @media (prefers-reduced-motion: no-preference) {
     :root {
         scroll-behavior: inherit;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        max-width: 100vw;
     }
 }
 
@@ -29,7 +34,15 @@ img {
     //background: $px-theme;
     z-index: 99999;
 }
-
+.err{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:70vh;
+    max-width:100vw;
+    font-size: 30px;
+    font-weight: 600;
+}
 .load-circle {
     position: fixed;
     top: 0;

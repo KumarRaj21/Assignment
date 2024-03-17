@@ -6,10 +6,9 @@ import Carousel from "../Carousel/Carousel";
 const Testimonial = (props) => {
   const { testimonialInfo, brandInfo } = props.data;
   if (!props.userdata) {
-    return <p>Loading...</p>; // Or any other loading indicator
+    return <p></p>; // Or any other loading indicator
   }
-  return (
-    <section className="section testimonials-section bg-g">
+  return (props.userdata)?( <section className="section testimonials-section bg-g">
       <div className="container">
         <SectionHeading title="What they says" subTitle="Testimonial" />
         <div className="testimonials">
@@ -19,8 +18,7 @@ const Testimonial = (props) => {
           <Carousel data={brandInfo} userdata={props.userdata} />
         </div>
       </div>
-    </section >
-  )
+    </section >):"";
 }
 Testimonial.propTypes = {
   data: PropTypes.object

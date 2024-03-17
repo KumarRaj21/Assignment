@@ -4,7 +4,7 @@ import SectionHeading from "../SectionHeading/SectionHeading";
 import { useState } from "react";
 
 
-const Contact = ({ data }) => {
+const Contact = ({ data , userdata}) => {
   const { contactInfo, contactForm } = data;
 
   const [loading, setLoading] = useState(false);
@@ -47,8 +47,7 @@ const Contact = ({ data }) => {
       setLoading(false)
     }
   };
-  return (
-    <section
+  return (userdata)?(<section
       id="contact"
       data-scroll-index={5}
       className="section contact-section"
@@ -180,8 +179,7 @@ const Contact = ({ data }) => {
           </div>
         </div>
       </div>
-    </section>
-  )
+    </section>):"";
 }
 
 Contact.propTypes = {

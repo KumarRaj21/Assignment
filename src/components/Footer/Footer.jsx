@@ -5,10 +5,9 @@ const Footer = (props) => {
   const date = new Date;
   const currentYear = date.getFullYear();
   if (!props.userdata) {
-    return <p>Loading...</p>; // Or any other loading indicator
+    return <p></p>; // Or any other loading indicator
   }
-  return (
-    <footer className="footer">
+  return (props.userdata)?(  <footer className="footer">
       <div className="container">
         <div className="footer-info">
           <div className="footer-avatar">
@@ -18,8 +17,7 @@ const Footer = (props) => {
         </div>
         <p className="copyright">© {currentYear} copyright all right reserved</p>
       </div>
-    </footer>
-  )
+    </footer>):"";
 }
 Footer.propTypes = {
   data: PropTypes.object

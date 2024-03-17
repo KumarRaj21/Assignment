@@ -6,11 +6,15 @@ import { Icon } from "@iconify/react";
 const Experience = (props) => {
 
   const { text, experience, resumeCv } = props.data;
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return date.toLocaleDateString('en-US', options);
+  };
     if (!props.userdata) {
-    return <p>Loading...</p>; // Or any other loading indicator
+    return <p></p>; // Or any other loading indicator
   }
-  return (
-    <section className="section experience-section bg-g">
+  return (props.userdata) ? (<section className="section experience-section bg-g">
       <div className="container">
         <div className="row gy-5">
           <div className="col-lg-5">
@@ -29,18 +33,18 @@ const Experience = (props) => {
               {props.userdata.timeline.map((element, index) => (
                 <li key={index} data-aos="fade-up" data-aos-duration="800">
                   <div className="r-meta">
-                    <span>-{element.startDate} - {element.endDate}</span>
+                    <span>{formatDate(element.startDate)} - {formatDate(element.endDate)}</span>
                     <label>-{element.summary}</label>
                   </div>
                   <h5>{element.jobTitle}</h5>
+                  <label>{element.forEducation ? "For Education":"For Experience"}</label>
                 </li>
               ))}
             </ul>
           </div>
         </div>
       </div>
-    </section>
-  )
+    </section>):"";
 }
 
 Experience.propTypes = {

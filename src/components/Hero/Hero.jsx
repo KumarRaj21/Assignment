@@ -21,11 +21,10 @@ const Hero = (props) => {
     };
   }, []);
   if (!props.userdata) {
-    return <p>Loading...</p>; // Or any other loading indicator
+    return <p></p>;
   }
 
-  return (
-    <section id="home" className="home-section bg-dark">
+  return (props.userdata )?(<section id="home" className="home-section bg-dark">
       <div className="container">
         <div className="row  min-vh-100 align-items-center">
           <div className="col-lg-7 col-xl-7 col-xxl-6">
@@ -58,8 +57,7 @@ const Hero = (props) => {
           }
         </div>
       </div>
-    </section>
-  )
+    </section>):"";
 }
 
 Hero.propTypes = {
