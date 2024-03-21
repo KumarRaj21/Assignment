@@ -38,19 +38,23 @@ const Portfolio = (props) => {
                       <img src={element.image.url} title="" alt="protfolio image" />
                     </div>
                     <div className="work-text">
-                      {/* <h6>{element.subTitle}</h6> */}
+                      
                       <h4>{element.title}</h4>
+                      {/* <div className='btn-bar'>{element.techStack.map((item,index)=>{
+                        <div className='Work-text-tech-item' key={index}>{item}</div>
+                      })}</div> */}
+                      <div className='btn-bar'>{element.techStack}</div>
                       <a href={element.githuburl}><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M10.8333 9.16658L17.6666 2.33325" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M18.3333 5.66675V1.66675H14.3333" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M9.16669 1.66675H7.50002C3.33335 1.66675 1.66669 3.33341 1.66669 7.50008V12.5001C1.66669 16.6667 3.33335 18.3334 7.50002 18.3334H12.5C16.6667 18.3334 18.3334 16.6667 18.3334 12.5001V10.8334" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg></a>
 
-                      <div className="btn-bar">
+                      {/* <div className="btn-bar">
                         <a className="gallery-link" onClick={() => getData(element.image.url, element.title, element.description)}>
                           <Icon icon="bi:arrow-up-right" />
                         </a>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>

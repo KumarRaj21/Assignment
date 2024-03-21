@@ -24,9 +24,8 @@ const About = (props) => {
               <div className="about-avatar">
                 <img src={`${props.userdata.about.avatar.url}`} alt="Thumb" />
               </div>
-              {/* <h3>{name}</h3> */}
               <h3>{props.userdata.about.name}</h3>
-              <p>{perser(props.userdata.about.title)}</p>
+              <p>{perser(`${props.userdata.about.title} based in <br/>${props.userdata.about.address}`)}</p>
               <div className="btn-bar">
                 <a className="px-btn" href={props.data.resumeCv} download>
                   Download CV <Icon icon="bi-download" />
@@ -36,8 +35,7 @@ const About = (props) => {
           </div>
           <div className="col-lg-7 ps-xl-5">
             <div className="about-bio">
-              {/* <p>{aboutText}</p> */}
-              <p>{props.userdata.about.description}</p>
+              <p>{props.userdata.about.subTitle}</p>
             </div>
             <div className="about-contact row gx-lg-5">
               {/* {contactInfo.map((element, index) => (
@@ -96,7 +94,7 @@ const About = (props) => {
                       <h6>{archivement[1].number}</h6>
                       <span>{perser(archivement[1].meta)}</span>
                     </div>
-                    <p className="lead">{perser(archivement[1].text)}</p>
+                    <p className="lead">{perser(props.userdata.about.description)}</p>
                   </div>
               </div>
               <blockquote>

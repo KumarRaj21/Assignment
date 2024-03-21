@@ -28,7 +28,7 @@ const Service = (props) => {
                   aria-controls={`${element.triger}`}
                 >
                   <span className="services-title">{element.name}</span>
-                  <span className="services-small-desc">{element.desc}<br/>Charge: {element.charge}</span>
+                  <span className="services-small-desc">{element.desc}</span>
                   <span className="accordion-icon" />
                 </button>
               </div>
@@ -53,6 +53,7 @@ const Service = (props) => {
                     <div className="col-sm-6 col-md-8">
                       <h3>{element.name}</h3>
                       <div className="s-text">{element.desc}</div>
+                      <button className='px-btn3'>{element.charge}</button>
                     </div>
                   </div>
                 </div>

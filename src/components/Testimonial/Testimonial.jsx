@@ -14,9 +14,9 @@ const Testimonial = (props) => {
         <div className="testimonials">
           <Carousel data={testimonialInfo} userdata={props.userdata} />
         </div>
-        <div className="testimonials-brand">
+        {/* <div className="testimonials-brand">
           <Carousel data={brandInfo} userdata={props.userdata} />
-        </div>
+        </div> */}
       </div>
     </section >):"";
 }

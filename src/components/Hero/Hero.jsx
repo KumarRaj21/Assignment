@@ -29,8 +29,8 @@ const Hero = (props) => {
         <div className="row  min-vh-100 align-items-center">
           <div className="col-lg-7 col-xl-7 col-xxl-6">
             <div className="hb-text">
-              <h1 data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">{perser(props.userdata.about.title)}</h1>
-              <p className="lead" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">{perser(props.userdata.about.subTitle)}</p>
+              <h1 data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">{perser(`MY NAME IS ${props.userdata.about.name}...`)}</h1>
+              <p className="lead" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">{perser(`${props.userdata.about.title} based in <br/>${props.userdata.about.address}`)}</p>
               <div className="btn-bar" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
                 <ScrollLink to="contact" spy={true} className="px-btn">
                   Work with ME
