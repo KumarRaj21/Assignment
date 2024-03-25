@@ -113,3 +113,14 @@
 		}
 	}
 }
+.skill-percentage{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	border: 2px solid rgb(164, 164, 164);
+	border-radius: 25px;
+	margin: 10px;
+	padding: 2px;
+}

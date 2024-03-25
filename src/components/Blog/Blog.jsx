@@ -36,7 +36,18 @@ const Blog = (props) => {
                       </a>
                     </div>
                     <div className="blog-post-info">
-                      <h6>Percentage : {element.percentage}</h6>
+                      {/* <input type='range' min={0} max={100} value={element.percentage}/> */}
+                      <div className='skill-percentage'> 
+                        <div style={{
+                        height :'99%',
+                        width:`${element.percentage}%`,
+                        backgroundColor:'var(--px-theme)',
+                        display:'flex',
+                        justifyContent:'center',
+                        alignItems:"center",
+                        borderRadius:'25px'
+                      }}>{element.percentage}%</div>
+                      </div>
                       <h2>
                         <a className="px_modal">
                           {element.name}
